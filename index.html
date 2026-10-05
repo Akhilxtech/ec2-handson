@@ -17,6 +17,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#workshop">Workshop</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -33,6 +34,41 @@
             <button class="btn btn-secondary">Learn More</button>
         </div>
         <div class="hero-background"></div>
+    </section>
+
+    <!-- Interactive workshop activity -->
+    <section id="workshop" class="workshop">
+        <div class="container">
+            <div class="workshop-heading">
+                <span class="workshop-label">TRY IT YOURSELF</span>
+                <h2>Personalize your cloud page</h2>
+                <p>Make a change below and watch the live preview update instantly.</p>
+            </div>
+            <div class="personalizer">
+                <div class="personalizer-controls">
+                    <label for="visitor-name">Your name</label>
+                    <input id="visitor-name" type="text" placeholder="Enter your name" maxlength="30">
+
+                    <label for="visitor-message">Welcome message</label>
+                    <textarea id="visitor-message" rows="4" maxlength="120">Welcome to my website hosted on Amazon EC2!</textarea>
+
+                    <label for="theme-color">Choose an accent color</label>
+                    <input id="theme-color" type="color" value="#0066ff">
+
+                    <button id="reset-personalizer" class="btn btn-outline" type="button">Reset preview</button>
+                </div>
+                <div id="personalizer-preview" class="personalizer-preview">
+                    <span class="preview-tag"><i class="fas fa-cloud"></i> LIVE PREVIEW</span>
+                    <h3 id="preview-greeting">Hello, visitor!</h3>
+                    <p id="preview-message">Welcome to my website hosted on Amazon EC2!</p>
+                    <div class="preview-status"><i class="fas fa-check-circle"></i> Served from the cloud</div>
+                </div>
+            </div>
+            <div class="nano-challenge">
+                <i class="fas fa-terminal"></i>
+                <span><strong>Workshop challenge:</strong> Change the default message in <code>index.html</code> using <code>sudo nano index.html</code>, save it, and refresh the page.</span>
+            </div>
+        </div>
     </section>
 
     <!-- Services Section -->

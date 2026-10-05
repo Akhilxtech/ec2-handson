@@ -27,10 +27,39 @@ const observer = new IntersectionObserver(function (entries) {
     });
 }, observerOptions);
 
-// Observe service cards, feature items, pricing cards, and testimonials
-document.querySelectorAll('.service-card, .feature-item, .pricing-card, .testimonial-card').forEach(el => {
+// Observe the workshop activity, service cards, feature items, pricing cards, and testimonials
+document.querySelectorAll('.personalizer, .service-card, .feature-item, .pricing-card, .testimonial-card').forEach(el => {
     observer.observe(el);
 });
+
+// Live workshop personalizer
+const visitorName = document.querySelector('#visitor-name');
+const visitorMessage = document.querySelector('#visitor-message');
+const themeColor = document.querySelector('#theme-color');
+const previewGreeting = document.querySelector('#preview-greeting');
+const previewMessage = document.querySelector('#preview-message');
+const preview = document.querySelector('#personalizer-preview');
+const resetPersonalizer = document.querySelector('#reset-personalizer');
+
+function updatePersonalizer() {
+    const name = visitorName.value.trim();
+    const message = visitorMessage.value.trim();
+    previewGreeting.textContent = name ? `Hello, ${name}!` : 'Hello, visitor!';
+    previewMessage.textContent = message || 'Welcome to my website hosted on Amazon EC2!';
+    preview.style.background = `linear-gradient(135deg, ${themeColor.value}, #00d4ff)`;
+}
+
+if (visitorName && visitorMessage && themeColor && preview && resetPersonalizer) {
+    [visitorName, visitorMessage, themeColor].forEach(input => {
+        input.addEventListener('input', updatePersonalizer);
+    });
+    resetPersonalizer.addEventListener('click', () => {
+        visitorName.value = '';
+        visitorMessage.value = 'Welcome to my website hosted on Amazon EC2!';
+        themeColor.value = '#0066ff';
+        updatePersonalizer();
+    });
+}
 
 // Contact form submission
 const contactForm = document.querySelector('.contact-form');
