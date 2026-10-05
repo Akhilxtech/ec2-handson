@@ -1,6 +1,6 @@
-# Chapter 07 — Hands-On Lab: Amazon EC2 Virtual Machine
+# Chapter 04 — Hands-On Lab: Amazon EC2 Virtual Machine
 
-**Day 1 | 01:00 PM – 01:15 PM | Core Lab**
+**Day 1 | 11:00 PM – 01:15 PM | Core Lab**
 
 ---
 
